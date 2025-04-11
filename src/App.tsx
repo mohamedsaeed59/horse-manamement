@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HorsesPage from "./pages/HorsesList";
+import ProtectedRoute from "./auth/ProtectedRoute";
+import HorseDetails from "./pages/HorseDetails";
+import LoginPageWrapper from "./pages/LoginPage";
+import Header from "./components/Header/Header";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/login" element={<LoginPageWrapper />} />
+        <Route
+          path="/horses"
+          element={
+            <ProtectedRoute>
+              <HorsesPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/horses/:id"
+          element={
+            <ProtectedRoute>
+              <HorseDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<LoginPageWrapper />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

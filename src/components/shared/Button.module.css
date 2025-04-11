@@ -1,0 +1,34 @@
+.button {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+  }
+  
+  .fullWidth {
+    width: 100%;
+  }
+  
+  .primary {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .logout {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination-active {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .pagination-inactive {
+    background-color: #eee;
+    color: #333;
+  }
+  
