@@ -11,20 +11,18 @@
     width: 100%;
 }  
 .primary {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 } 
 .logout {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 } 
 .pagination-active {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
-  
 .pagination-inactive {
     background-color: #eee;
-    color: #333;
+    color: var(--secondary-color);
 }
-  

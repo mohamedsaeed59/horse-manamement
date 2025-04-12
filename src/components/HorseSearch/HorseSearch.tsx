@@ -10,7 +10,7 @@ const HorseSearch: React.FC<HorseSearchProps> = ({ search, setSearch }) => {
   return (
     <input
       type="text"
-      placeholder="ابحث باسم الحصان"
+      placeholder="البحث باسم الحصان أو السلالة"
       value={search}
       onChange={(e) => setSearch(e.target.value)}
       className={styles.searchInput}

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "../utils/authUtils";
 
-const API_BASE = "https://frosiatech_itcAlAX.jeyad360.com/organization/v1/d";
+const API_BASE = "https://noonacademy_ancozle.jeyad360.com/organization/v1/d";
 
 const api = axios.create({
   baseURL: API_BASE,

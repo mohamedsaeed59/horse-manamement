@@ -33,9 +33,10 @@ const HorsesList: React.FC = () => {
 
   const filteredHorses = useMemo(() => {
     return horses.filter((horse) =>
-      horse.name.toLowerCase().includes(search.toLowerCase())
+      horse.name.toLowerCase().includes(search.toLowerCase()) ||
+      horse.breed.toLowerCase().includes(search.toLowerCase())
     );
-  }, [horses, search]);
+  }, [horses, search]);  
   
 
   const totalPages = Math.ceil(filteredHorses.length / itemsPerPage);
@@ -55,7 +56,7 @@ const HorsesList: React.FC = () => {
         <ErrorMessage message={error} />
       ) : (
         <>
-          <Suspense fallback={<Loading text="جارٍ تحميل الخيول..." />}>
+          <Suspense fallback={<Loading text="جاري تحميل الخيول..." />}>
             <HorseGrid horses={paginatedHorses} />
           </Suspense>
 
