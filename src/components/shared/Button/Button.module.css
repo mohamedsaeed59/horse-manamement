@@ -6,29 +6,25 @@
     cursor: pointer;
     transition: background 0.3s;
     font-weight: bold;
-  }
-  
-  .fullWidth {
+}  
+.fullWidth {
     width: 100%;
-  }
-  
-  .primary {
+}  
+.primary {
     background-color: #333;
     color: #fff;
-  }
-  
-  .logout {
+} 
+.logout {
     background-color: #4CAF50;
     color: white;
-  }
-  
-  .pagination-active {
+} 
+.pagination-active {
     background-color: #4CAF50;
     color: #fff;
-  }
+}
   
-  .pagination-inactive {
+.pagination-inactive {
     background-color: #eee;
     color: #333;
-  }
+}
   

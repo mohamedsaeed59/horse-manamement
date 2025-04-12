@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./LoginPage.module.css";
 import { login } from "../../services/authService";
 import { saveToken } from "../../utils/authUtils";
-import Button from "../shared/Button";
+import Button from "../shared/Button/Button";
+import ErrorMessage from "../shared/ErrorMessage/ErrorMessage";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +21,7 @@ const LoginPage: React.FC = () => {
     try {
       const token = await login(email, password);
       saveToken(token);
-      navigate("/horses");
+      navigate("/");
     } catch (err: any) {
       setError(err.message || "حدث خطأ");
     } finally {
@@ -55,7 +56,7 @@ const LoginPage: React.FC = () => {
           />
         </div>
 
-        {error && <p className={styles.error}>{error}</p>}
+        {error && <ErrorMessage message={error} />}
 
         <Button
           type="submit"

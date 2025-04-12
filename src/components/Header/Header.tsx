@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { removeToken } from "../../utils/authUtils";
 import styles from "./Header.module.css";
-import Button from "../shared/Button";
+import Button from "../shared/Button/Button";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();

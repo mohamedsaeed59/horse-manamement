@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Pagination.module.css";
-import Button from "../shared/Button";
+import Button from "../shared/Button/Button";
 
 interface PaginationProps {
   totalPages: number;

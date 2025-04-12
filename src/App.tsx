@@ -11,9 +11,8 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Routes>
-        <Route path="/login" element={<LoginPageWrapper />} />
         <Route
-          path="/horses"
+          path="/"
           element={
             <ProtectedRoute>
               <HorsesPage />
@@ -28,7 +27,8 @@ const App: React.FC = () => {
             </ProtectedRoute>
           }
         />
-        <Route path="*" element={<LoginPageWrapper />} />
+        <Route path="/login" element={<LoginPageWrapper />} />
+        <Route path="*" element={<p>الصفحة غير موجودة</p>} />
       </Routes>
     </Router>
   );

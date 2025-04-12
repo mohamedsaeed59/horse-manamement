@@ -7,8 +7,8 @@ export interface Horse {
   data: any;
 }
   
-  export interface HorseApiResponse {
+export interface HorseApiResponse {
     data: {
       data: Horse[];
     };
-  }
+}

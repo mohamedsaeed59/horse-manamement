@@ -18,7 +18,6 @@ const HorseCard: React.FC<HorseCardProps> = ({ horse }) => {
   return (
     <div onClick={handleClick} className={styles.card}>
       <img
-        // src="https://rehla-iq.com/m/public/images/ad/674b5502b65fc.jpg"
         src={horse.image}
         loading="lazy"
         alt={horse.name}

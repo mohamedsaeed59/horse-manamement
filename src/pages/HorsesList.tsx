@@ -3,6 +3,8 @@ import { fetchHorses } from "../services/horseService";
 import { Horse } from "../types/Horse";
 import HorseSearch from "../components/HorseSearch/HorseSearch";
 import Pagination from "../components/Pagination/Pagination";
+import Loading from "../components/shared/Loading/Loading";
+import ErrorMessage from "../components/shared/ErrorMessage/ErrorMessage";
 const HorseGrid = React.lazy(() => import("../components/HorseGrid/HorseGrid"));
 
 const HorsesList: React.FC = () => {
@@ -48,12 +50,12 @@ const HorsesList: React.FC = () => {
       <HorseSearch search={search} setSearch={setSearch} />
 
       {loading ? (
-        <p>جاري التحميل...</p>
+        <p><Loading /></p>
       ) : error ? (
-        <p style={{ color: "red" }}>{error}</p>
+        <ErrorMessage message={error} />
       ) : (
         <>
-          <Suspense fallback={<p>تحميل...</p>}>
+          <Suspense fallback={<Loading text="جارٍ تحميل الخيول..." />}>
             <HorseGrid horses={paginatedHorses} />
           </Suspense>
 
